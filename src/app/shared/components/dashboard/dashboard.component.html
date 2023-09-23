@@ -1,0 +1,32 @@
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+<input type="text" class="form-control mb-3 mt-3" placeholder="search "
+ [(ngModel)]="searchValue">
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>sr no</th>
+                        <th>name</th>
+                        <th>team</th>
+                        <th> test_runs</th>
+                        <th>odi_runs</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of players | filter :searchValue ; index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{p.name}}</td>
+                        <td>{{p.team}}</td>
+                        <td>{{p.odi_runs}}</td>
+                        <td>{{p.test_runs}}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>
